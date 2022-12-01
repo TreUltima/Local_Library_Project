@@ -32,7 +32,8 @@ function getBooksPossessedByAccount(account, books, authors) {
   })
 
   bookList.map(bookObj => {
-    let foundAuthor = authors.find(authorObj => bookObj.authorId === authorObj.id)
+    let foundAuthor = findAccountById(authors, bookObj.authorId)
+    //let foundAuthor = authors.find(authorObj => bookObj.authorId === authorObj.id)
     bookObj.author = foundAuthor;
     return bookObj;
   })
